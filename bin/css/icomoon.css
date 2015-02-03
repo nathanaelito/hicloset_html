@@ -1,0 +1,105 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-9fz8er');
+	src:url('../fonts/icomoon.eot?#iefix-9fz8er') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-9fz8er') format('woff'),
+		url('../fonts/icomoon.ttf?-9fz8er') format('truetype'),
+		url('../fonts/icomoon.svg?-9fz8er#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	vertical-align: middle;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-fedex:before {
+	content: "\e600";
+}
+.icon-mastercard:before {
+	content: "\e601";
+}
+.icon-mastercarde:before {
+	content: "\e602";
+}
+.icon-paypal:before {
+	content: "\e603";
+}
+.icon-usps:before {
+	content: "\e604";
+}
+.icon-visa:before {
+	content: "\e605";
+}
+.icon-visae:before {
+	content: "\e606";
+}
+.icon-search:before {
+	content: "\f002";
+}
+.icon-heart:before {
+	content: "\f004";
+}
+.icon-user:before {
+	content: "\f007";
+}
+.icon-tag:before {
+	content: "\f02b";
+}
+.icon-edit:before {
+	content: "\f044";
+}
+.icon-shopping-cart:before {
+	content: "\f07a";
+}
+.icon-twitter-square:before {
+	content: "\f081";
+}
+.icon-facebook-square:before {
+	content: "\f082";
+}
+.icon-pinterest-square:before {
+	content: "\f0d3";
+}
+.icon-angle-double-left:before {
+	content: "\f100";
+}
+.icon-angle-double-right:before {
+	content: "\f101";
+}
+.icon-angle-double-up:before {
+	content: "\f102";
+}
+.icon-angle-double-down:before {
+	content: "\f103";
+}
+.icon-angle-left:before {
+	content: "\f104";
+}
+.icon-angle-right:before {
+	content: "\f105";
+}
+.icon-angle-up:before {
+	content: "\f106";
+}
+.icon-angle-down:before {
+	content: "\f107";
+}
+.icon-instagram:before {
+	content: "\f16d";
+}
+.icon-envelope-square:before {
+	content: "\f199";
+}
+.icon-wechat:before {
+	content: "\f1d7";
+}

@@ -193,6 +193,42 @@ header .outer .inner .top-menu li a.icon-shopping-cart {
   text-align: center;
   width: 44px;
 }
+header .inner {
+  /*nav{
+			ul{
+				position: relative;
+				text-align: justify;
+				height: 44px;
+				width: 100%;
+				&:after{
+					position: relative;
+					display: inline-block;
+					width: 100%;
+					height: 0;
+					line-height: 0;
+					content: '';
+				}
+				li{
+					display: inline-block;
+					a{
+						color: @grisoscuro;
+						display: block;
+						font-family: 'NexaRegular';
+						font-size: 12px;
+						line-height: 44px;
+						text-decoration: none;
+						text-transform: uppercase;
+						&:hover{
+							color: @rosa;
+						}
+					}
+					ul {
+					    display:none;
+					}
+				}
+			}
+		}*/
+}
 header .inner .logo {
   display: inline-block;
   margin-top: -50px;
@@ -236,21 +272,18 @@ header .inner .menu-btn {
   display: none;
 }
 header .inner nav ul {
-  position: relative;
-  text-align: justify;
-  height: 44px;
+  display: table;
+  line-height: 40px;
   width: 100%;
-}
-header .inner nav ul:after {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 0;
-  line-height: 0;
-  content: '';
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 header .inner nav ul li {
-  display: inline-block;
+  display: table-cell;
+  text-align: center;
+  width: 1%;
+  /* force cell to shrink-to-fit text */
 }
 header .inner nav ul li a {
   color: #333333;
@@ -264,9 +297,6 @@ header .inner nav ul li a {
 header .inner nav ul li a:hover {
   color: #df174d;
 }
-header .inner nav ul li ul {
-  display: none;
-}
 .menu-mobile {
   display: none;
 }
@@ -277,6 +307,7 @@ header .inner nav ul li ul {
 .main-slideshow .inner .slider-images {
   background-color: black;
   position: relative;
+  height: 100%;
   width: 100%;
   /*&:before{
 				content: "";
@@ -346,10 +377,9 @@ header .inner nav ul li ul {
   padding: 10px;
 }
 .product-slider .inner .slider .product-list li div.image {
-  height: 130%;
+  height: 300px;
   background-color: rgba(0, 0, 0, 0.2);
   position: relative;
-  border: 1px solid #8C8C8C;
   overflow: hidden;
   /*&:before{
 								content: '';

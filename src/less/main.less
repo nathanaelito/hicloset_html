@@ -181,7 +181,34 @@ header{
 		.menu-btn{
 			display: none;
 		}
-		nav{
+		nav {
+			ul {
+				display: table;
+				line-height: 40px;
+				width: 100%;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				li {
+					display: table-cell;
+					text-align: center;
+					width: 1%; /* force cell to shrink-to-fit text */
+					a {
+						color: @grisoscuro;
+						display: block;
+						font-family: 'NexaRegular';
+						font-size: 12px;
+						line-height: 44px;
+						text-decoration: none;
+						text-transform: uppercase;
+						&:hover{
+							color: @rosa;
+						}
+					}
+				}
+			}
+		}
+		/*nav{
 			ul{
 				position: relative;
 				text-align: justify;
@@ -214,7 +241,7 @@ header{
 					}
 				}
 			}
-		}
+		}*/
 	}
 }
 .menu-mobile{
@@ -227,6 +254,7 @@ header{
 		.slider-images{
 			background-color: black;
 			position: relative;
+			height: 100%;
 			width: 100%;
 			/*&:before{
 				content: "";
@@ -294,10 +322,9 @@ header{
 					padding: 10px;
 					div{
 						&.image{
-						    height: 130%;
+						    height: 300px;
 							background-color: rgba(0,0,0,0.2);
 							position: relative;
-							border:1px solid #8C8C8C;
 							overflow:hidden;
 							/*&:before{
 								content: '';

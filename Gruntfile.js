@@ -49,14 +49,14 @@ module.exports = function(grunt) {
           paths: ["src/less"]
         },
         files: {
-          "bin/css/main.css": "src/less/main.less",
-          "../../../site/magento/skin/frontend/hicloset/default/css/styles.css": "src/less/main.less"
+          "bin/css/main.css": "src/less/main.less"/*,
+          "../../../site/magento/skin/frontend/hicloset/default/css/styles.css": "src/less/main.less"*/
         }
       },
     },
     watch: {
       options:{
-        livereload:true
+        livereload:9999
       },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -66,8 +66,14 @@ module.exports = function(grunt) {
         files: 'src/less/*.less',
         tasks: ['less']
       },
+      jsfiles: {
+        files:'js/*.js'
+      },
       htmlfiles: {
         files:'bin/*.html'
+      },
+      cssfiles: {
+        files:'bin/css/*.css'
       }
     }
   });

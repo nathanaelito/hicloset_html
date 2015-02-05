@@ -248,7 +248,7 @@ header .inner .busqueda {
   position: absolute;
   right: 0px;
   top: 24px;
-  width: 300px;
+  /*width: 300px;*/
 }
 header .inner .busqueda input {
   border: 0px;
@@ -296,6 +296,9 @@ header .inner nav ul li a {
 }
 header .inner nav ul li a:hover {
   color: #df174d;
+}
+header .inner nav ul li ul {
+  display: none;
 }
 .menu-mobile {
   display: none;

@@ -255,16 +255,27 @@ header{
 	    height:450px;
 	    overflow:hidden;
 		.slider-images{
-			background-color: black;
-			position: relative;
 			height: 100%;
 			width: 100%;
+			background-color: rgba(0,0,0,0.2);
+			position: relative;
 			/*&:before{
 				content: "";
 				display: block;
 				padding-top: 50%;
 			}*/
+			img.loader {
+			    position:absolute;
+			    top:0;
+			    left:0;
+			    right:0;
+			    bottom:0;
+			    margin:auto;
+			}
 			ul {
+			    &#images-list {
+			        display:none;
+			    }
 		        padding:0;
 		        margin:0;
 		        li {
@@ -335,7 +346,13 @@ header{
 								padding-top: 130%;
 							}*/
 							img {
-							    width:100%
+							    width:auto;
+							    height:100%;
+							    position:absolute;
+							    left:0;
+							    right:0;
+							    margin-left:auto;
+							    margin-right:auto;
 							}
 							.icon-tag{
 								color: @rosa;

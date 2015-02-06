@@ -10,6 +10,8 @@
 	<script src="js/IE8.js" type="text/javascript"></script><![endif]-->
 <!--[if lt IE 7]>
 	<link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
+	<script type="text/javascript" src="http://localhost/Toolbox/js/greensock/src/minified/TweenMax.min.js"></script>
+	<script type="text/javascript" src="http://localhost/Toolbox/js/min/components.min.js"></script>
 </head>
 <body id="index" class="home">
 <header>
@@ -90,9 +92,15 @@
 		<li><a href="">Galería</a></li>
 	</ul>
 </nav>
-<div class="main-slideshow">
+<div class="main-slideshow" id="main-slideshow">
 	<div class="inner">
 		<div class="slider-images">
+			<img src="img/ajax-loader.gif" alt="loader" class="loader" id="loader" />
+			<ul id="images-list">
+				<li><a href="#"><img alt="An eye for detail - Click to Shop Eye Wear" src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
+				<li><a href=""><img alt="Style solutions - covet-worthy styles in travel-friendly fabrics - Click to Shop Woman" src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
+				<li><a href=""><img alt="Wing man - hit the runway in stylish separates and casuals - Click to Shop Man" src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
+			</ul>
 		</div>
 		<div class="slider-pager">
 			<ul>
@@ -281,7 +289,8 @@
 		</div>
 	</div>
 </footer>
-
+<script type="text/javascript" src="js/modules/mediator.js"></script>
+<script type="text/javascript" src="js/modules/main.js"></script>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':9999/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>

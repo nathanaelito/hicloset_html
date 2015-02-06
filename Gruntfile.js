@@ -16,8 +16,10 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
       dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        expand: true,
+        cwd: 'src/js',
+        src: '**/*.js',
+        dest: 'bin/js'
       }
     },
 
@@ -67,7 +69,8 @@ module.exports = function(grunt) {
         tasks: ['less']
       },
       jsfiles: {
-        files:'js/*.js'
+        files:['src/js/*.js', 'src/js/**/*.js'],
+        tasks:['uglify']
       },
       htmlfiles: {
         files:'bin/*.html'

@@ -1,8 +1,11 @@
+
 /*
  * @author Noizee makenoizee@gmail.com
  */
-define('mediator', function() 
-{
+(function(window, document, undefined) {
+	'use strict';
+
+
 	/*// ****************************************** //*/
 	/*// MEDIATOR									//*/
 	/*// ****************************************** //*/
@@ -32,7 +35,7 @@ define('mediator', function()
 		}
 	}
 
-	return {
+	var mediator = {
 		publish: publish,
 		subscribe: subscribe,
 		installTo: function(obj){
@@ -40,4 +43,14 @@ define('mediator', function()
 			obj.publish = publish;
 		}
 	}
-});
+
+	//Expose mediator module as either a global variable or a require.js module
+	if(typeof define === 'function' && define.amd) {
+		define('mediator', function () {
+			return mediator;
+		});
+	} else {
+		window.mediator = mediator;
+	}
+
+}(window, document));

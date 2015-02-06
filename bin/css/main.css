@@ -337,6 +337,7 @@ header .inner nav ul li ul {
   list-style-type: none;
   display: block;
   float: left;
+  width: 100%;
 }
 .main-slideshow .inner .slider-images ul li img {
   width: 100%;

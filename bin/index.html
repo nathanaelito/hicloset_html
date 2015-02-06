@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="hicloset">
 <head>
 <meta charset="utf-8" />
 <title>Hi Closet</title>
@@ -10,8 +10,9 @@
 	<script src="js/IE8.js" type="text/javascript"></script><![endif]-->
 <!--[if lt IE 7]>
 	<link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
-	<script type="text/javascript" src="http://localhost/Toolbox/js/greensock/src/minified/TweenMax.min.js"></script>
-	<script type="text/javascript" src="http://localhost/Toolbox/js/min/components.min.js"></script>
+	<script type="text/javascript" src="http://franciscogutierrez.net/libs/js/min/tweenmax/TweenMax.min.js"></script>
+	<script type="text/javascript" src="http://franciscogutierrez.net/libs/js/min/components.min.js"></script>
+	<script type="text/javascript" src="../bower_components/angularjs/angular.min.js"></script>
 </head>
 <body id="index" class="home">
 <header>
@@ -54,8 +55,11 @@
 			</a>
 		</h1>
 		<div class="busqueda">
-			<input type="text" name="buscar" placeholder="Buscar">
-			<button type="button" class="icon-search"></button>
+			<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send()" novalidate>
+				<input type="text" name="buscar" placeholder="Buscar" required />
+				<button type="submit" class="icon-search"></button>
+				{{searchForm.$valid}}
+			</form>
 		</div>
 		<a class="menu-btn">
 			<span></span>
@@ -94,21 +98,19 @@
 </nav>
 <div class="main-slideshow" id="main-slideshow">
 	<div class="inner">
-		<div class="slider-images">
+		<div class="slider-images" id="slider-images">
 			<img src="img/ajax-loader.gif" alt="loader" class="loader" id="loader" />
 			<ul id="images-list">
-				<li><a href="#"><img alt="An eye for detail - Click to Shop Eye Wear" src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
-				<li><a href=""><img alt="Style solutions - covet-worthy styles in travel-friendly fabrics - Click to Shop Woman" src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
-				<li><a href=""><img alt="Wing man - hit the runway in stylish separates and casuals - Click to Shop Man" src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
+				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
+				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
+				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
+				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
+				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
+				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
 			</ul>
 		</div>
-		<div class="slider-pager">
-			<ul>
-				<li><a href=""></a></li>
-				<li><a href=""></a></li>
-				<li><a href=""></a></li>
-				<li><a href=""></a></li>
-			</ul>
+		<div class="slider-pager" id="slider-pager">
+			
 		</div>
 	</div>
 </div>

@@ -10,8 +10,9 @@
 	<script src="js/IE8.js" type="text/javascript"></script><![endif]-->
 <!--[if lt IE 7]>
 	<link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
-	<script type="text/javascript" src="http://franciscogutierrez.net/libs/js/min/tweenmax/TweenMax.min.js"></script>
+	<script type="text/javascript" src="http://localhost/Toolbox/js/greensock/src/minified/TweenMax.min.js"></script>
 	<script type="text/javascript" src="http://franciscogutierrez.net/libs/js/min/components.min.js"></script>
+	<script type="text/javascript" src="http://franciscogutierrez.net/libs/js/min/utils.min.js"></script>
 	<script type="text/javascript" src="../bower_components/angularjs/angular.min.js"></script>
 </head>
 <body id="index" class="home">
@@ -56,9 +57,8 @@
 		</h1>
 		<div class="busqueda">
 			<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send()" novalidate>
-				<input type="text" name="buscar" placeholder="Buscar" required />
+				<input type="text" name="buscar" placeholder="Buscar" ng-model="search.expression" required />
 				<button type="submit" class="icon-search"></button>
-				{{searchForm.$valid}}
 			</form>
 		</div>
 		<a class="menu-btn">
@@ -96,7 +96,7 @@
 		<li><a href="">Galería</a></li>
 	</ul>
 </nav>
-<div class="main-slideshow" id="main-slideshow">
+<div class="main-slideshow" id="main-slideshow" ng-controller="HomeSlider as slider">
 	<div class="inner">
 		<div class="slider-images" id="slider-images">
 			<img src="img/ajax-loader.gif" alt="loader" class="loader" id="loader" />
@@ -270,10 +270,12 @@
 		</div>
 		<div class="col-3">
 			<h2>Regístrate</h2>
+			<form name="newsForm" ng-controller="Newsletter as news" ng-submit="newsForm.$valid && news.send()" novalidate>
 			<ul>
-				<li><input type="text" placeholder="Escribe tu e-mail aquí"></li>
-				<li><button>Enviar</button>
+				<li><input type="email" placeholder="Escribe tu e-mail aquí" ng-model="news.email" required /></li>
+				<li><button type="submit">Enviar</button>
 			</ul>
+			</form>
 		</div>
 	</div>
 	<div class="bottom">

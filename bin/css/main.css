@@ -534,6 +534,10 @@ footer .inner .col-3 ul li input {
   padding: 0 5%;
   width: 90%;
 }
+footer .inner .col-3 ul li input.ng-invalid.ng-dirty {
+  background: #ffb5b0;
+  color: #000000;
+}
 footer .inner .col-3 ul li button {
   background-color: #df174d;
   border: 0px;

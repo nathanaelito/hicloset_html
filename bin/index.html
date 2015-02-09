@@ -11,8 +11,8 @@
 <!--[if lt IE 7]>
 	<link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
 	<script type="text/javascript" src="http://localhost/Toolbox/js/greensock/src/minified/TweenMax.min.js"></script>
-	<script type="text/javascript" src="http://franciscogutierrez.net/libs/js/min/components.min.js"></script>
-	<script type="text/javascript" src="http://franciscogutierrez.net/libs/js/min/utils.min.js"></script>
+	<script type="text/javascript" src="http://localhost/Toolbox/js/min/components.min.js"></script>
+	<script type="text/javascript" src="http://localhost/Toolbox/js/min/utils.min.js"></script>
 	<script type="text/javascript" src="../bower_components/angularjs/angular.min.js"></script>
 </head>
 <body id="index" class="home">
@@ -56,9 +56,9 @@
 			</a>
 		</h1>
 		<div class="busqueda">
-			<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send()" novalidate>
+			<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send('')" novalidate>
 				<input type="text" name="buscar" placeholder="Buscar" ng-model="search.expression" required />
-				<button type="submit" class="icon-search"></button>
+				<button type="submit" class="icon-search" ng-show="searchForm.$valid"></button>
 			</form>
 		</div>
 		<a class="menu-btn">
@@ -270,7 +270,7 @@
 		</div>
 		<div class="col-3">
 			<h2>Regístrate</h2>
-			<form name="newsForm" ng-controller="Newsletter as news" ng-submit="newsForm.$valid && news.send()" novalidate>
+			<form name="newsForm" ng-controller="Newsletter as news" ng-submit="newsForm.$valid && news.send('')" novalidate>
 			<ul>
 				<li><input type="email" placeholder="Escribe tu e-mail aquí" ng-model="news.email" required /></li>
 				<li><button type="submit">Enviar</button>

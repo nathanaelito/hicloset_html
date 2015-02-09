@@ -188,15 +188,15 @@
 
 	app.controller("Search", function() {
 		this.expression="";
-		this.send=function() {
-			console.log(this);
+		this.send=function(url) {
+			console.log(url);
 		};
 	});
 
 	app.controller("Newsletter", function() {
 		this.email="";
-		this.send=function() {
-			console.log(this);
+		this.send=function(url) {
+			console.log(url);
 		};
 	});
 

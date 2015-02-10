@@ -82,7 +82,7 @@
 /*
  * Angular modules
  */
-(function(_m, _tm, _ih) 
+(function(_m, _tm, _ih, _u) 
 {
   	var app = angular.module('hicloset', []);
 
@@ -90,7 +90,7 @@
 
 		var self=this;
 
-		var width=980;
+		var width=100;
 		var position=0;
 		var activeln=null;
 		var autoPlay=false;
@@ -101,7 +101,7 @@
 		var pager=document.getElementById('slider-pager');
 
 		var straight=true;
-		var delay=2000;
+		var delay=4000;
 		var intv=null;
 
 		_ih.addImages(items);
@@ -116,7 +116,7 @@
 
 		function config() 
 		{
-			wrapper.style.width=(width*items.length)+'px';
+			wrapper.style.width=(width*items.length)+'%';
 		
 			var li=wrapper.getElementsByTagName('li');
 			var liWidth=(100/li.length);
@@ -175,23 +175,23 @@
 				activeln=document.getElementById('ln_'+position);
 				activeln.className="active";
 
-				_tm.to(wrapper, 0.5, {left:-(width*position)});
+				_tm.to(wrapper, 0.5, {left:-(width*position)+'%', ease: Sine.easeOut});
 
 			}, delay);
 		}
 
 		function getSlide(value) {
 			position=value;
-			_tm.to(wrapper, 0.5, {left:-(width*position)});
+			_tm.to(wrapper, 0.5, {left:-(width*position)+'%', ease: Sine.easeOut});
 		}
 	}]);
 
-	app.controller("Search", function() {
-		this.expression="";
+	app.controller("Search", ['$location', function() {
+		this.expression={};
 		this.send=function(url) {
-			console.log(url);
+			location.href=_u.get(url, this.expression);
 		};
-	});
+	}]);
 
 	app.controller("Newsletter", function() {
 		this.email="";
@@ -200,4 +200,4 @@
 		};
 	});
 
-}(mediator, TweenMax, imhelper));
+}(mediator, TweenMax, imhelper, _u));

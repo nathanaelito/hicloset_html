@@ -56,8 +56,8 @@
 			</a>
 		</h1>
 		<div class="busqueda">
-			<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send('')" novalidate>
-				<input type="text" name="buscar" placeholder="Buscar" ng-model="search.expression" required />
+			<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send('http://hicloset.com.mx/index.php/newsletter/subscriber/new/ ')" novalidate>
+				<input type="text" name="buscar" placeholder="Buscar" ng-model="search.expression.q" required />
 				<button type="submit" class="icon-search" ng-show="searchForm.$valid"></button>
 			</form>
 		</div>

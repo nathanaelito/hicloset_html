@@ -114,58 +114,59 @@
 		</div>
 	</div>
 </div>
-<div class="product-slider">
+<div ng-controller="ProductSlider as slider">
+<div id="new-products" class="product-slider">
 	<div class="inner">
 		<h2>Productos nuevos</h2>
-		<div class="slider">
-			<ul class="product-list">
-				<li>
+		<div class="slider" id="slider-products">
+			<ul id="products-list" class="product-list" style="width:125%;">
+				<li style="width:20%;">
 					<div class="image">
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
 				</li>
-				<li>
+				<li style="width:20%;">
 					<div class="image">
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
 				</li>
-				<li>
+				<li style="width:20%;">
 					<div class="image">
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
 				</li>
-				<li>
+				<li style="width:20%;">
 					<div class="image">
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
+					</div>
+					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+					<div class="precio">$XX,XXX MNX</div>
+				</li>
+				<li style="width:20%;">
+					<div class="image">
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
 				</li>
 			</ul>
-			<a href="" class="icon-angle-double-left"></a>
-			<a href="" class="icon-angle-double-right"></a>
 		</div>
+		<a href="" class="icon-angle-double-left"></a>
+		<a href="" class="icon-angle-double-right"></a>
 	</div>
 </div>
-<div class="product-slider">
+<div id="onsale-products" class="product-slider">
 	<div class="inner">
 		<h2>Productos en oferta</h2>
 		<div class="slider">
@@ -173,10 +174,8 @@
 				<li>
 					<div class="image">
 						<span class="icon-tag"></span>
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
@@ -184,10 +183,8 @@
 				<li>
 					<div class="image">
 						<span class="icon-tag"></span>
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
@@ -195,10 +192,8 @@
 				<li>
 					<div class="image">
 						<span class="icon-tag"></span>
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
@@ -206,19 +201,18 @@
 				<li>
 					<div class="image">
 						<span class="icon-tag"></span>
-						<ul>
-							<li><a href="" class="guardar"><span class="icon-heart"></span>Guardar</a></li>
-							<li><a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a></li>
-						</ul>
+						<a href="" class="guardar"><span class="icon-heart"></span>Guardar</a>
+						<a href="" class="comprar"><span class="icon-shopping-cart"></span>Comprar</a>
 					</div>
 					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
 					<div class="precio">$XX,XXX MNX</div>
 				</li>
 			</ul>
-			<a href="" class="icon-angle-double-left"></a>
-			<a href="" class="icon-angle-double-right"></a>
 		</div>
+		<a href="" class="icon-angle-double-left"></a>
+		<a href="" class="icon-angle-double-right"></a>
 	</div>
+</div>
 </div>
 <footer>
 	<div class="inner">

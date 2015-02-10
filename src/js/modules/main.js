@@ -186,6 +186,57 @@
 		}
 	}]);
 
+	app.controller("ProductSlider", function() {
+
+		var sliders=document.getElementsByClassName("slider");
+		for (var i = 0; i < sliders.length; i++) {
+			new Slider(sliders[i]);
+		};
+
+		function Slider(slider) 
+		{
+			this.wrap=slider.getElementsByTagName("ul")[0];
+			this.list=slider.getElementsByTagName("li");
+
+			this.init=function() {
+				var self=this;
+				this.resize();
+				this.setListWidth();
+				window.onresize=function() {self.resize()};
+			}
+
+			this.resize=function() 
+			{
+				var w_width=window.outerWidth;
+				var list_width=0;
+
+				if(w_width>1024)
+					list_width=this.getListWidth(4);
+				else if((w_width>767)&&(w_width<1024))
+					list_width=this.getListWidth(3);
+				else if((w_width>640)&&(w_width<767))
+					list_width=this.getListWidth(2);
+				else if(w_width<640)
+					list_width=this.getListWidth(1);
+
+				console.log(this.wrap);
+				this.wrap.style.width=(list_width+'%');
+			}
+
+			this.setListWidth=function(list) {
+				var li_width=(100/this.list.length);
+				for (var i = 0; i < this.list.length; i++)
+					this.list[i].style.width=(li_width+'%');
+			}
+
+			this.getListWidth=function(value) {
+				return (((this.list.length-value)*100/value)+100);
+			}
+			
+			this.init();
+		}
+	});
+
 	app.controller("Search", ['$location', function() {
 		this.expression={};
 		this.send=function(url) {

@@ -219,7 +219,6 @@
 				else if(w_width<640)
 					list_width=this.getListWidth(1);
 
-				console.log(this.wrap);
 				this.wrap.style.width=(list_width+'%');
 			}
 
@@ -244,11 +243,17 @@
 		};
 	}]);
 
-	app.controller("Newsletter", function() {
-		this.email="";
+	app.controller("Newsletter", ['$http', function($http) {
+		this.data={};
 		this.send=function(url) {
-			console.log(url);
+			$http.post(url, this.data).
+			success(function(data, status, headers, config) {
+				alert("Has sido suscrito.");
+			}).
+			error(function(data, status, headers, config) {
+				console.log(data);
+			});
 		};
-	});
+	}]);
 
 }(mediator, TweenMax, imhelper, _u));

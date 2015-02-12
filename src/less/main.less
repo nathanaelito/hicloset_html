@@ -166,7 +166,7 @@ header{
 				height: 30px;
 				margin: 6px;
 				padding: 0 12px;
-				width: 212px;
+				width: 236px;
 			}
 			button{
 				background-color: transparent;
@@ -193,12 +193,13 @@ header{
 					display: table-cell;
 					text-align: center;
 					width: 1%; /* force cell to shrink-to-fit text */
+					padding:1em 0;
 					a {
 						color: @grisoscuro;
 						display: block;
 						font-family: 'NexaRegular';
-						font-size: 12px;
-						line-height: 44px;
+						font-size: .9em;
+						line-height: 1.5em;
 						text-decoration: none;
 						text-transform: uppercase;
 						&:hover{
@@ -381,15 +382,17 @@ header{
 								top: 0px;
 							}
 							a{
-								display: block;
-								width: 50%;
-								position: absolute;
-								bottom: 0px;
-								color: @blanco;
-								line-height: 44px;
-								text-align: center;
-								text-decoration: none;
-								overflow: hidden;
+							    &.button {
+    								display: block;
+    								width: 50%;
+    								position: absolute;
+    								bottom: 0px;
+    								color: @blanco;
+    								line-height: 44px;
+    								text-align: center;
+    								text-decoration: none;
+    								overflow: hidden;
+							    }
 								&.guardar{
 									background-color: @azul;
 									left:0;
@@ -407,6 +410,9 @@ header{
 								span{
 									font-size: 20px;
 									padding-right: 8px;
+								}
+								&.product-image {
+								    top: 0px;
 								}
 							}
 							/*ul{

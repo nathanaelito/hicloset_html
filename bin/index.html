@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="../bower_components/angularjs/angular.min.js"></script>
 </head>
 <body id="index" class="home">
-<header>
+<header ng-controller="Header as header">
 	<div class="top">
 		<h2>SHOP FOR WOMEN, CLOTHING &AMP; ACCESSORIES</h2>
 	</div>
@@ -61,7 +61,7 @@
 				<button type="submit" class="icon-search"></button>
 			</form>
 		</div>
-		<a class="menu-btn">
+		<a class="menu-btn" ng-click="header.showMobileMenu()">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -80,7 +80,7 @@
 		</nav>
 	</div>
 </header>
-<nav class="menu-mobile">
+<nav class="menu-mobile" id="menu-mobile">
 	<ul>
 		<li><a href=""><span class="icon-edit"></span><span>Regístrate</span></a></li>
 		<li><a href=""><span class="icon-user"></span><span>Iniciar Sesión</span></a></li>
@@ -166,7 +166,7 @@
 		<a href="" class="icon-angle-double-right"></a>
 	</div>
 </div>
-<div id="onsale-products" class="product-slider">
+<!--div id="onsale-products" class="product-slider">
 	<div class="inner">
 		<h2>Productos en oferta</h2>
 		<div class="slider">
@@ -212,7 +212,7 @@
 		<a href="" class="icon-angle-double-left"></a>
 		<a href="" class="icon-angle-double-right"></a>
 	</div>
-</div>
+</div-->
 </div>
 <footer>
 	<div class="inner">

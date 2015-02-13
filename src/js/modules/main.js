@@ -86,6 +86,16 @@
 {
   	var app = angular.module('hicloset', []);
 
+  	app.controller("Header", function() 
+  	{
+  		var mobilemenu=false;
+  		this.showMobileMenu=function() {
+  			var menu=document.getElementById('menu-mobile');
+  			menu.style.display=((mobilemenu)?"none":"block");
+  			mobilemenu=((mobilemenu)?false:true);
+  		}
+  	});
+
   	app.controller("HomeSlider", ['$scope', '$interval', function($scope, $interval) {
 
 		var self=this;

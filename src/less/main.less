@@ -3,33 +3,37 @@
 @import url('elements.less');
 @font-face {
 	font-family: 'NexaLight';
-	src: url('fonts/nexalight.eot');
-	src: url('fonts/nexalight.eot?#iefix') format('embedded-opentype'),
-			 url('fonts/nexalight.woff') format('woff'),
-			 url('fonts/nexalight.ttf') format('truetype'),
-			 url('fonts/nexalight.svg#nexalight') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	src: url('fonts/nexa-light-webfont.eot');
+    src: url('fonts/nexa-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/nexa-light-webfont.woff2') format('woff2'),
+         url('fonts/nexa-light-webfont.woff') format('woff'),
+         url('fonts/nexa-light-webfont.ttf') format('truetype'),
+         url('fonts/nexa-light-webfont.svg#nexa_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
 	font-family: 'NexaRegular';
-	src: url('fonts/nexaregular.eot');
-	src: url('fonts/nexaregular.eot?#iefix') format('embedded-opentype'),
-			 url('fonts/nexaregular.woff') format('woff'),
-			 url('fonts/nexaregular.ttf') format('truetype'),
-			 url('fonts/nexaregular.svg#nexaregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	src: url('fonts/nexa-regular-webfont.eot');
+    src: url('fonts/nexa-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/nexa-regular-webfont.woff2') format('woff2'),
+         url('fonts/nexa-regular-webfont.woff') format('woff'),
+         url('fonts/nexa-regular-webfont.ttf') format('truetype'),
+         url('fonts/nexa-regular-webfont.svg#nexa_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 @font-face {
 	font-family: 'NexaBold';
-	src: url('fonts/nexabold.eot');
-	src: url('fonts/nexabold.eot?#iefix') format('embedded-opentype'),
-			 url('fonts/nexabold.woff') format('woff'),
-			 url('fonts/nexabold.ttf') format('truetype'),
-			 url('fonts/nexabold.svg#nexabold') format('svg');
-	font-weight: normal;
-	font-style: normal;
+	src: url('fonts/nexa-bold-webfont.eot');
+    src: url('fonts/nexa-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/nexa-bold-webfont.woff2') format('woff2'),
+         url('fonts/nexa-bold-webfont.woff') format('woff'),
+         url('fonts/nexa-bold-webfont.ttf') format('truetype'),
+         url('fonts/nexa-bold-webfont.svg#nexa_boldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @blanco: #FFFFFF;
@@ -90,7 +94,7 @@ input, textarea{
 	width: 33.33%;
 }
 h1,h2,h3,h4,h5,h6{
-	font-family: 'NexaLight';
+	font-family: 'NexaBold';
 	font-weight: normal;
 	text-transform: uppercase;
 }
@@ -103,16 +107,23 @@ body{
 }
 header{
 	.top{
+		height: 26px;
+		position: relative;
 		color: @rosa;
 		font-size: 18px;
 		font-family: 'NexaLight';
-		height: 26px;
 		text-align: center;
 		line-height: 30px;
+		z-index: 1;
+		h2 {
+			font-family: 'NexaLight';
+		}
 	}
 	.outer{
-		background-color: #333;
 		height: 44px;
+		background-color: #333;
+		position: relative;
+		z-index: 2;
 		.inner{
 			.top-menu{
 				float: right;
@@ -150,6 +161,9 @@ header{
 		}
 	}
 	.inner{
+		position: relative;
+		z-index: 3;
+		overflow: visible;
 		.logo{
 			display: inline-block;
 			margin-top: -50px;
@@ -202,7 +216,7 @@ header{
 				padding: 0;
 				li {
 					display: table-cell;
-					text-align: center;
+					/*text-align: center;*/
 					width: 1%; /* force cell to shrink-to-fit text */
 					padding:1em 0;
 					a {
@@ -376,11 +390,14 @@ header{
 	.icon-angle-double-left{ left: -13px;}
 	.icon-angle-double-right{ right: -13px;}
 	.inner{
-		padding: 30px 0;
+		/*padding: 30px 0;*/
+		margin-top: .7em;
+		margin-bottom: .7em;
 		width: 960px;
 		h2{
 			margin-left: 10px;
 			margin-right: 10px;
+			margin-top: 1em;
 		}
 		.slider{
 		    width: 100%;
@@ -582,6 +599,107 @@ header{
 		}
 	}
 }
+.product-list{
+	overflow: hidden;
+	li{
+		display: block;
+		box-sizing: border-box;
+		float: left;
+		width: 25%;
+		padding: 10px;
+		div{
+			&.image{
+			    height: 300px;
+				/*background-color: rgba(0,0,0,0.2);*/
+				position: relative;
+				border: 1px solid #8C8C8C;
+				overflow:hidden;
+				/*&:before{
+					content: '';
+					display: block;
+					padding-top: 130%;
+				}*/
+				img {
+				    width:auto;
+				    height:100%;
+				    position:absolute;
+				    left:0;
+				    right:0;
+				    margin-left:auto;
+				    margin-right:auto;
+				}
+				.icon-tag{
+					color: @rosa;
+					font-size: 60px;
+					left: 0px;
+					position: absolute;
+					top: 0px;
+				}
+				.save-buy{
+					bottom: 0px;
+					position: absolute;
+					li{
+						margin: 0;
+						padding: 0;
+						width: 50%;
+					}
+				
+
+				}
+			}
+			&.precio{
+				color: @rosa;
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 100%;
+				text-align: center;
+			}
+			&.desc{
+				margin: .9em 1em;
+				text-align: center;
+				a {
+					font-size: .9em;
+				    color:@negro;
+				    text-decoration:none;
+				}
+			}
+		}
+	}
+}
+.page-title {
+	width: 100%;
+	height: 44px;
+	background: #D0D0D0;
+	h1 {
+		display: block;
+		width: 940px;
+		position: relative;
+		margin:0 auto;
+		padding-top: .7em;
+		font:1.5em 'NexaRegular';
+		color:#333333;
+	}
+}
+.pager{
+	line-height: 24px;
+	padding: 24px 0;
+	text-align: center;
+	ul{
+		li{
+			display: inline-block;
+			margin: 0 -3px;
+			a{
+				display: block;
+				line-height: 24px;
+				padding: 0 8px;
+				text-decoration: none;
+				&.current{
+					background-color: @rosa;
+				}
+			}
+		}
+	}
+}
 footer{
 	background-color: @grisoscuro;
 	color: @blanco;
@@ -746,6 +864,14 @@ ul.save-buy{
 			}
 		}
 	}
+	.product-list {
+		li{
+			width: 33.33%;
+			div{
+				margin: 10px;
+			}
+		}
+	}
 	footer{
 		.inner{
 			width: 100%;
@@ -818,6 +944,11 @@ ul.save-buy{
 			}
 		}
 	}
+	.product-list{
+		li{
+			width: 50%;
+		}
+	}
 	footer{
 		background-color: @grisoscuro;
 		color: @blanco;
@@ -859,6 +990,11 @@ ul.save-buy{
 				}
 			}*/
 		    }
+		}
+	}
+	.product-list{
+		li{
+			width: 100%;
 		}
 	}
 }

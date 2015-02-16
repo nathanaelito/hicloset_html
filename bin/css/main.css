@@ -8,22 +8,22 @@
   ---------------------------------------------------*/
 @font-face {
   font-family: 'NexaLight';
-  src: url('fonts/nexalight.eot');
-  src: url('fonts/nexalight.eot?#iefix') format('embedded-opentype'), url('fonts/nexalight.woff') format('woff'), url('fonts/nexalight.ttf') format('truetype'), url('fonts/nexalight.svg#nexalight') format('svg');
+  src: url('fonts/nexa-light-webfont.eot');
+  src: url('fonts/nexa-light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/nexa-light-webfont.woff2') format('woff2'), url('fonts/nexa-light-webfont.woff') format('woff'), url('fonts/nexa-light-webfont.ttf') format('truetype'), url('fonts/nexa-light-webfont.svg#nexa_lightregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'NexaRegular';
-  src: url('fonts/nexaregular.eot');
-  src: url('fonts/nexaregular.eot?#iefix') format('embedded-opentype'), url('fonts/nexaregular.woff') format('woff'), url('fonts/nexaregular.ttf') format('truetype'), url('fonts/nexaregular.svg#nexaregular') format('svg');
+  src: url('fonts/nexa-regular-webfont.eot');
+  src: url('fonts/nexa-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/nexa-regular-webfont.woff2') format('woff2'), url('fonts/nexa-regular-webfont.woff') format('woff'), url('fonts/nexa-regular-webfont.ttf') format('truetype'), url('fonts/nexa-regular-webfont.svg#nexa_regularregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'NexaBold';
-  src: url('fonts/nexabold.eot');
-  src: url('fonts/nexabold.eot?#iefix') format('embedded-opentype'), url('fonts/nexabold.woff') format('woff'), url('fonts/nexabold.ttf') format('truetype'), url('fonts/nexabold.svg#nexabold') format('svg');
+  src: url('fonts/nexa-bold-webfont.eot');
+  src: url('fonts/nexa-bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/nexa-bold-webfont.woff2') format('woff2'), url('fonts/nexa-bold-webfont.woff') format('woff'), url('fonts/nexa-bold-webfont.ttf') format('truetype'), url('fonts/nexa-bold-webfont.svg#nexa_boldregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -150,7 +150,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'NexaLight';
+  font-family: 'NexaBold';
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -162,16 +162,23 @@ body {
   font-size: 12px;
 }
 header .top {
+  height: 26px;
+  position: relative;
   color: #df174d;
   font-size: 18px;
   font-family: 'NexaLight';
-  height: 26px;
   text-align: center;
   line-height: 30px;
+  z-index: 1;
+}
+header .top h2 {
+  font-family: 'NexaLight';
 }
 header .outer {
-  background-color: #333;
   height: 44px;
+  background-color: #333;
+  position: relative;
+  z-index: 2;
 }
 header .outer .inner .top-menu {
   float: right;
@@ -205,6 +212,9 @@ header .outer .inner .top-menu li a.icon-shopping-cart {
   width: 44px;
 }
 header .inner {
+  position: relative;
+  z-index: 3;
+  overflow: visible;
   /*nav{
 			ul{
 				position: relative;
@@ -292,7 +302,7 @@ header .inner nav ul {
 }
 header .inner nav ul li {
   display: table-cell;
-  text-align: center;
+  /*text-align: center;*/
   width: 1%;
   /* force cell to shrink-to-fit text */
   padding: 1em 0;
@@ -433,12 +443,15 @@ header .inner nav ul li ul {
   right: -13px;
 }
 .product-slider .inner {
-  padding: 30px 0;
+  /*padding: 30px 0;*/
+  margin-top: .7em;
+  margin-bottom: .7em;
   width: 960px;
 }
 .product-slider .inner h2 {
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 1em;
 }
 .product-slider .inner .slider {
   width: 100%;
@@ -624,6 +637,101 @@ header .inner nav ul li ul {
 .product-detail .inner .col-2 .info .save-buy {
   padding: 20px 0;
 }
+.product-list {
+  overflow: hidden;
+}
+.product-list li {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+.product-list li div.image {
+  height: 300px;
+  /*background-color: rgba(0,0,0,0.2);*/
+  position: relative;
+  border: 1px solid #8C8C8C;
+  overflow: hidden;
+  /*&:before{
+					content: '';
+					display: block;
+					padding-top: 130%;
+				}*/
+}
+.product-list li div.image img {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.product-list li div.image .icon-tag {
+  color: #df174d;
+  font-size: 60px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+}
+.product-list li div.image .save-buy {
+  bottom: 0px;
+  position: absolute;
+}
+.product-list li div.image .save-buy li {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+.product-list li div.precio {
+  color: #df174d;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+}
+.product-list li div.desc {
+  margin: .9em 1em;
+  text-align: center;
+}
+.product-list li div.desc a {
+  font-size: .9em;
+  color: #000000;
+  text-decoration: none;
+}
+.page-title {
+  width: 100%;
+  height: 44px;
+  background: #D0D0D0;
+}
+.page-title h1 {
+  display: block;
+  width: 940px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: .7em;
+  font: 1.5em 'NexaRegular';
+  color: #333333;
+}
+.pager {
+  line-height: 24px;
+  padding: 24px 0;
+  text-align: center;
+}
+.pager ul li {
+  display: inline-block;
+  margin: 0 -3px;
+}
+.pager ul li a {
+  display: block;
+  line-height: 24px;
+  padding: 0 8px;
+  text-decoration: none;
+}
+.pager ul li a.current {
+  background-color: #df174d;
+}
 footer {
   background-color: #333333;
   color: #ffffff;
@@ -782,6 +890,12 @@ ul.save-buy li a span {
   .product-slider .inner .slider .product-list {
     width: 133.33%;
   }
+  .product-list li {
+    width: 33.33%;
+  }
+  .product-list li div {
+    margin: 10px;
+  }
   footer .inner {
     width: 100%;
   }
@@ -840,6 +954,9 @@ ul.save-buy li a span {
   .product-slider .inner .slider .product-list {
     width: 200%;
   }
+  .product-list li {
+    width: 50%;
+  }
   footer {
     background-color: #333333;
     color: #ffffff;
@@ -877,5 +994,8 @@ ul.save-buy li a span {
   }
   .product-slider .inner .slider .product-list {
     width: 400%;
+  }
+  .product-list li {
+    width: 100%;
   }
 }

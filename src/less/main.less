@@ -501,6 +501,7 @@ header{
 	}
 }
 .product-detail{
+	margin-top: 1em;
 	.inner{
 		.col-2{
 			.imagen{
@@ -543,16 +544,16 @@ header{
 				font-size: 150%;
 				margin-left: 20px;
 				table{
+					width: 100%;
+					margin-bottom: .5em;
 					border-collapse: collapse;
 					table-layout: fixed;
-					width: 100%;
 					tbody{
 						tr{
 							width: 50%;
 							td{
 								vertical-align: middle;
-								padding: 18px 0 0;
-								height: 32px;
+								padding: .5em 0;
 								input{
 									border: 1px solid #cacaca;
 									display: inline-block;
@@ -677,6 +678,38 @@ header{
 				}
 			}
 		}
+	}
+}
+.tabs{
+	.tab-menu{
+		overflow: hidden;
+		li{
+			border: 1px solid #CCC;
+			background-color: #CCC;
+			display: block;
+			float: left;
+			height: 46px;
+			margin-right: -1px;
+			&.active{
+				a{
+					background-color: #FFF;
+					color: @negro;
+					height: 47px;
+				}
+			}
+			a{
+				display: block;
+				color: #FFF;
+				line-height: 44px;
+				padding: 0 22px;
+				text-decoration: none;
+			}
+		}
+	}
+	.tab-content{
+		border: 1px solid #CCC;
+		margin-top: -1px;
+		padding: 20px;
 	}
 }
 footer{
@@ -858,7 +891,23 @@ ul.save-buy{
 	}
 }
 
+@media screen and (max-width: 968px){
+	.product-detail { 
+		.inner  {
+			.col-2 {
+				.info {
+					font-size: 120%;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 767px){
+	#main {
+	  	overflow: auto;
+	  	padding-bottom: 0;
+	}
 	header{
 		height: 70px;
 		.top,
@@ -910,11 +959,6 @@ ul.save-buy{
 			    .product-list{
 			        width:200%;
 			    }
-				/*.product-list{
-					li{
-						width: 50%;
-					}
-				}*/
 			}
 		}
 	}
@@ -923,7 +967,32 @@ ul.save-buy{
 			width: 50%;
 		}
 	}
+	.product-detail { 
+		.inner  {
+			.col-2 { 
+				width: 100%;
+				.imagen {
+					width: 99%;
+					height: auto;
+				}
+				.thumbs {
+					height: auto;
+					ul{
+						li {
+							height: auto;
+						}
+					}
+				}
+				.info {
+					font-size: 100%;
+					margin-left: 0;
+				}
+			}
+		}
+	}
 	footer{
+		margin-top: 0;
+		height: auto;
 		background-color: @grisoscuro;
 		color: @blanco;
 		.inner{

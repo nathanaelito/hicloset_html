@@ -191,7 +191,7 @@
 		}
 
 		function getSlide(value) {
-			position=value;
+			position=parseInt(value);
 			_tm.to(wrapper, 0.5, {left:-(width*position)+'%', ease: Sine.easeOut});
 		}
 	}]);
@@ -265,5 +265,15 @@
 			});
 		};
 	}]);
+
+	app.controller("Panels", function() {
+		this.panel=1;
+		this.setPanel=function(value) {
+			this.panel=value;
+		}
+		this.isSelected=function(value) {
+			return (this.panel===value);
+		}
+	});
 
 }(mediator, TweenMax, imhelper, _u));

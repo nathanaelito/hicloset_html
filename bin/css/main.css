@@ -549,6 +549,9 @@ header .inner nav ul li ul {
   color: #000000;
   text-decoration: none;
 }
+.product-detail {
+  margin-top: 1em;
+}
 .product-detail .inner .col-2 .imagen {
   width: 100%;
   height: 520px;
@@ -590,17 +593,17 @@ header .inner nav ul li ul {
   margin-left: 20px;
 }
 .product-detail .inner .col-2 .info table {
+  width: 100%;
+  margin-bottom: .5em;
   border-collapse: collapse;
   table-layout: fixed;
-  width: 100%;
 }
 .product-detail .inner .col-2 .info table tbody tr {
   width: 50%;
 }
 .product-detail .inner .col-2 .info table tbody tr td {
   vertical-align: middle;
-  padding: 18px 0 0;
-  height: 32px;
+  padding: .5em 0;
 }
 .product-detail .inner .col-2 .info table tbody tr td input {
   border: 1px solid #cacaca;
@@ -711,6 +714,34 @@ header .inner nav ul li ul {
 }
 .pager ul li a.current {
   background-color: #df174d;
+}
+.tabs .tab-menu {
+  overflow: hidden;
+}
+.tabs .tab-menu li {
+  border: 1px solid #CCC;
+  background-color: #CCC;
+  display: block;
+  float: left;
+  height: 46px;
+  margin-right: -1px;
+}
+.tabs .tab-menu li.active a {
+  background-color: #FFF;
+  color: #000000;
+  height: 47px;
+}
+.tabs .tab-menu li a {
+  display: block;
+  color: #FFF;
+  line-height: 44px;
+  padding: 0 22px;
+  text-decoration: none;
+}
+.tabs .tab-content {
+  border: 1px solid #CCC;
+  margin-top: -1px;
+  padding: 20px;
 }
 footer {
   background-color: #333333;
@@ -874,7 +905,16 @@ ul.save-buy li a span {
     width: 90%;
   }
 }
+@media screen and (max-width: 968px) {
+  .product-detail .inner .col-2 .info {
+    font-size: 120%;
+  }
+}
 @media screen and (max-width: 767px) {
+  #main {
+    overflow: auto;
+    padding-bottom: 0;
+  }
   header {
     height: 70px;
   }
@@ -915,20 +955,32 @@ ul.save-buy li a span {
   .main-slideshow .inner {
     width: 100%;
   }
-  .product-slider .inner .slider {
-    /*.product-list{
-					li{
-						width: 50%;
-					}
-				}*/
-  }
   .product-slider .inner .slider .product-list {
     width: 200%;
   }
   .product-list li {
     width: 50%;
   }
+  .product-detail .inner .col-2 {
+    width: 100%;
+  }
+  .product-detail .inner .col-2 .imagen {
+    width: 99%;
+    height: auto;
+  }
+  .product-detail .inner .col-2 .thumbs {
+    height: auto;
+  }
+  .product-detail .inner .col-2 .thumbs ul li {
+    height: auto;
+  }
+  .product-detail .inner .col-2 .info {
+    font-size: 100%;
+    margin-left: 0;
+  }
   footer {
+    margin-top: 0;
+    height: auto;
     background-color: #333333;
     color: #ffffff;
   }

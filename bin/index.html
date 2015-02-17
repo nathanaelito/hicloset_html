@@ -14,60 +14,85 @@
 	<script type="text/javascript" src="http://localhost/Toolbox/js/min/components.min.js"></script>
 	<script type="text/javascript" src="http://localhost/Toolbox/js/min/utils.min.js"></script>
 	<script type="text/javascript" src="../bower_components/angularjs/angular.min.js"></script>
+<!--[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]-->
 </head>
 <body id="index" class="home">
-<header ng-controller="Header as header">
-	<div class="top">
-		<h2>SHOP FOR WOMEN, CLOTHING &AMP; ACCESSORIES</h2>
-	</div>
-	<div class="outer">
-		<div class="inner">
-			<ul class="top-menu">
-				<li>
-					<a href="">
-						<span class="icon-edit"></span>
-						<span>Regístrate</span>
+<div id="wrap">
+	<div id="main">
+		<header ng-controller="Header as header">
+			<div class="top">
+				<h2>SHOP FOR WOMEN, CLOTHING &AMP; ACCESSORIES</h2>
+			</div>
+			<div class="outer">
+				<div class="inner">
+					<ul class="top-menu">
+						<li>
+							<a href="">
+								<span class="icon-edit"></span>
+								<span>Regístrate</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span class="icon-user"></span>
+								<span>Iniciar Sesión</span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<span class="icon-wechat"></span>
+								<span>Help Chat</span>
+							</a>
+						</li>
+						<li class="last">
+							<a href="" class="icon-shopping-cart"></a>
+						</li>
+						<span></span>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<h1 class="logo">
+					<a href="#">
+						<img src="img/hicloset.svg" class="large">
+						<img src="img/hiclosetm.svg" class="small">
 					</a>
-				</li>
-				<li>
-					<a href="">
-						<span class="icon-user"></span>
-						<span>Iniciar Sesión</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<span class="icon-wechat"></span>
-						<span>Help Chat</span>
-					</a>
-				</li>
-				<li class="last">
-					<a href="" class="icon-shopping-cart"></a>
-				</li>
-				<span></span>
-			</ul>
-		</div>
-	</div>
-	<div class="inner">
-		<h1 class="logo">
-			<a href="#">
-				<img src="img/hicloset.svg" class="large">
-				<img src="img/hiclosetm.svg" class="small">
-			</a>
-		</h1>
-		<div class="busqueda">
-			<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send('http://hicloset.com.mx/index.php/newsletter/subscriber/new/ ')" novalidate>
-				<input type="text" name="buscar" placeholder="Buscar" ng-model="search.expression.q" required />
-				<button type="submit" class="icon-search"></button>
-			</form>
-		</div>
-		<a class="menu-btn" ng-click="header.showMobileMenu()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</a>
-		<nav>
+				</h1>
+				<div class="busqueda">
+					<form name="searchForm" ng-controller="Search as search" ng-submit="searchForm.$valid && search.send('http://hicloset.com.mx/index.php/newsletter/subscriber/new/ ')" novalidate>
+						<input type="text" name="buscar" placeholder="Buscar" ng-model="search.expression.q" required />
+						<button type="submit" class="icon-search"></button>
+					</form>
+				</div>
+				<a class="menu-btn" ng-click="header.showMobileMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+				<nav>
+					<ul>
+						<li><a href="">Todo</a></li>
+						<li><a href="">Vestidos</a></li>
+						<li><a href="">Pantalones &amp; Shorts</a></li>
+						<li><a href="">Faldas</a></li>
+						<li><a href="">Blusas</a></li>
+						<li><a href="">Accesorios</a></li>
+						<li><a href="">Ofertas</a></li>
+						<li><a href="">Galería</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<nav class="menu-mobile" id="menu-mobile">
 			<ul>
+				<li><a href=""><span class="icon-edit"></span><span>Regístrate</span></a></li>
+				<li><a href=""><span class="icon-user"></span><span>Iniciar Sesión</span></a></li>
+				<li><a href=""><span class="icon-wechat"></span><span>Help Chat</span></a></li>
+				<li><a href=""><span class="icon-shopping-cart"></span><span>Carrito de compras</span></a></li>
 				<li><a href="">Todo</a></li>
 				<li><a href="">Vestidos</a></li>
 				<li><a href="">Pantalones &amp; Shorts</a></li>
@@ -78,142 +103,126 @@
 				<li><a href="">Galería</a></li>
 			</ul>
 		</nav>
-	</div>
-</header>
-<nav class="menu-mobile" id="menu-mobile">
-	<ul>
-		<li><a href=""><span class="icon-edit"></span><span>Regístrate</span></a></li>
-		<li><a href=""><span class="icon-user"></span><span>Iniciar Sesión</span></a></li>
-		<li><a href=""><span class="icon-wechat"></span><span>Help Chat</span></a></li>
-		<li><a href=""><span class="icon-shopping-cart"></span><span>Carrito de compras</span></a></li>
-		<li><a href="">Todo</a></li>
-		<li><a href="">Vestidos</a></li>
-		<li><a href="">Pantalones &amp; Shorts</a></li>
-		<li><a href="">Faldas</a></li>
-		<li><a href="">Blusas</a></li>
-		<li><a href="">Accesorios</a></li>
-		<li><a href="">Ofertas</a></li>
-		<li><a href="">Galería</a></li>
-	</ul>
-</nav>
-<div class="main-slideshow" id="main-slideshow" ng-controller="HomeSlider as slider">
-	<div class="inner">
-		<div class="slider-images" id="slider-images">
-			<img src="img/ajax-loader.gif" alt="loader" class="loader" id="loader" />
-			<ul id="images-list">
-				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
-				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
-				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
-				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
-				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
-				<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
-			</ul>
+		<div class="main-slideshow" id="main-slideshow" ng-controller="HomeSlider as slider">
+			<div class="inner">
+				<div class="slider-images" id="slider-images">
+					<img src="img/ajax-loader.gif" alt="loader" class="loader" id="loader" />
+					<ul id="images-list">
+						<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
+						<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
+						<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
+						<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-1.jpg"></a></li>
+						<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-2.jpg"></a></li>
+						<li><a href=""><img src="http://hicloset.com.mx/media/wysiwyg/slide-3.jpg"></a></li>
+					</ul>
+				</div>
+				<div class="slider-pager" id="slider-pager">
+					
+				</div>
+			</div>
 		</div>
-		<div class="slider-pager" id="slider-pager">
-			
+		<div ng-controller="ProductSlider as slider">
+		<div id="new-products" class="product-slider">
+			<div class="inner">
+				<h2>Productos nuevos</h2>
+				<div class="slider" id="slider-products">
+					<ul id="products-list" class="product-list" style="width:125%;">
+						<li style="width:20%;">
+							<div class="image">
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+						<li style="width:20%;">
+							<div class="image">
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+						<li style="width:20%;">
+							<div class="image">
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+						<li style="width:20%;">
+							<div class="image">
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+						<li style="width:20%;">
+							<div class="image">
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+					</ul>
+				</div>
+				<a href="" class="icon-angle-double-left"></a>
+				<a href="" class="icon-angle-double-right"></a>
+			</div>
+		</div>
+		<!--div id="onsale-products" class="product-slider">
+			<div class="inner">
+				<h2>Productos en oferta</h2>
+				<div class="slider">
+					<ul class="product-list">
+						<li>
+							<div class="image">
+								<span class="icon-tag"></span>
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+						<li>
+							<div class="image">
+								<span class="icon-tag"></span>
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+						<li>
+							<div class="image">
+								<span class="icon-tag"></span>
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+						<li>
+							<div class="image">
+								<span class="icon-tag"></span>
+								<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
+								<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
+							</div>
+							<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
+							<div class="precio">$XX,XXX MNX</div>
+						</li>
+					</ul>
+				</div>
+				<a href="" class="icon-angle-double-left"></a>
+				<a href="" class="icon-angle-double-right"></a>
+			</div>
+		</div-->
 		</div>
 	</div>
-</div>
-<div ng-controller="ProductSlider as slider">
-<div id="new-products" class="product-slider">
-	<div class="inner">
-		<h2>Productos nuevos</h2>
-		<div class="slider" id="slider-products">
-			<ul id="products-list" class="product-list" style="width:125%;">
-				<li style="width:20%;">
-					<div class="image">
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-				<li style="width:20%;">
-					<div class="image">
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-				<li style="width:20%;">
-					<div class="image">
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-				<li style="width:20%;">
-					<div class="image">
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-				<li style="width:20%;">
-					<div class="image">
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-			</ul>
-		</div>
-		<a href="" class="icon-angle-double-left"></a>
-		<a href="" class="icon-angle-double-right"></a>
-	</div>
-</div>
-<!--div id="onsale-products" class="product-slider">
-	<div class="inner">
-		<h2>Productos en oferta</h2>
-		<div class="slider">
-			<ul class="product-list">
-				<li>
-					<div class="image">
-						<span class="icon-tag"></span>
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-				<li>
-					<div class="image">
-						<span class="icon-tag"></span>
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-				<li>
-					<div class="image">
-						<span class="icon-tag"></span>
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-				<li>
-					<div class="image">
-						<span class="icon-tag"></span>
-						<a href="" class="guardar button"><span class="icon-heart"></span>Guardar</a>
-						<a href="" class="comprar button"><span class="icon-shopping-cart"></span>Comprar</a>
-					</div>
-					<div class="desc">etiam vehicula augue maximus, blandit est quis, congue odio</div>
-					<div class="precio">$XX,XXX MNX</div>
-				</li>
-			</ul>
-		</div>
-		<a href="" class="icon-angle-double-left"></a>
-		<a href="" class="icon-angle-double-right"></a>
-	</div>
-</div-->
-</div>
+</div>		
 <footer>
 	<div class="inner">
 		<div class="col-3">

@@ -553,10 +553,11 @@ header .inner nav ul li ul {
   margin-top: 1em;
 }
 .product-detail .inner .col-2 .imagen {
-  width: 100%;
+  width: 97%;
   height: 520px;
   border: 1px solid #8C8C8C;
   overflow: hidden;
+  margin: 0 1.4%;
 }
 .product-detail .inner .col-2 .imagen img {
   width: 100%;
@@ -589,7 +590,7 @@ header .inner nav ul li ul {
   width: 100%;
 }
 .product-detail .inner .col-2 .info {
-  font-size: 150%;
+  font-size: 120%;
   margin-left: 20px;
 }
 .product-detail .inner .col-2 .info table {
@@ -853,6 +854,57 @@ ul.save-buy li {
   padding: 0;
   width: 50%;
 }
+ul.save-buy li .button {
+  display: block;
+  color: #ffffff;
+  line-height: 44px;
+  text-align: center;
+  text-decoration: none;
+}
+ul.save-buy li .button.guardar {
+  background-color: #01bfbf;
+}
+ul.save-buy li .button.guardar:hover {
+  background-color: #37ced0;
+}
+ul.save-buy li .button.comprar {
+  background-color: #df174d;
+}
+ul.save-buy li .button.comprar:hover {
+  background-color: #e95579;
+}
+ul.save-buy li .button span {
+  font-size: 20px;
+  padding-right: 8px;
+}
+ul.save-buy li button {
+  display: block;
+  color: #ffffff;
+  line-height: 44px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 100%;
+}
+ul.save-buy li button.guardar {
+  background-color: #01bfbf;
+}
+ul.save-buy li button.guardar:hover {
+  background-color: #37ced0;
+}
+ul.save-buy li button.comprar {
+  background-color: #df174d;
+}
+ul.save-buy li button.comprar:hover {
+  background-color: #e95579;
+}
+ul.save-buy li button span {
+  font-size: 20px;
+  padding-right: 8px;
+}
 ul.save-buy li a {
   display: block;
   color: #ffffff;
@@ -965,7 +1017,7 @@ ul.save-buy li a span {
     width: 100%;
   }
   .product-detail .inner .col-2 .imagen {
-    width: 99%;
+    width: 97%;
     height: auto;
   }
   .product-detail .inner .col-2 .thumbs {

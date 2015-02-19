@@ -276,4 +276,17 @@
 		}
 	});
 
+	app.controller("Product", function() {
+		this.data={};
+		this.send=function(url) {
+			$http.post(url, this.data).
+			success(function(data, status, headers, config) {
+				alert("Has sido suscrito.");
+			}).
+			error(function(data, status, headers, config) {
+				console.log(data);
+			});
+		};
+	});
+
 }(mediator, TweenMax, imhelper, _u));

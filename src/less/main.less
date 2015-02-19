@@ -505,10 +505,11 @@ header{
 	.inner{
 		.col-2{
 			.imagen{
-				width: 100%;
+				width: 97%;
 				height: 520px;
 				border: 1px solid #8C8C8C;
 				overflow: hidden;
+				margin: 0 1.4%;
 				img {
 					width: 100%;
 				}
@@ -541,7 +542,7 @@ header{
 				}
 			}
 			.info{
-				font-size: 150%;
+				font-size: 120%;
 				margin-left: 20px;
 				table{
 					width: 100%;
@@ -822,7 +823,7 @@ ul.save-buy{
 		margin: 0;
 		padding: 0;
 		width: 50%;
-		a{
+		.button {
 			display: block;
 			color: @blanco;
 			line-height: 44px;
@@ -844,6 +845,17 @@ ul.save-buy{
 				font-size: 20px;
 				padding-right: 8px;
 			}
+		}
+		button {
+			.button();
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			border: none;
+			font-size: 100%;
+		}
+		a{
+			.button();
 		}
 	}
 }
@@ -972,7 +984,7 @@ ul.save-buy{
 			.col-2 { 
 				width: 100%;
 				.imagen {
-					width: 99%;
+					width: 97%;
 					height: auto;
 				}
 				.thumbs {

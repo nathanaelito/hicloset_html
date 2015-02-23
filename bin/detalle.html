@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <title>Hi Closet</title>
 <link rel="stylesheet" href="css/main.css" type="text/css" />
+<link rel="stylesheet" href="js/vendor/magnifier.css" type="text/css" media="screen"/>
 <!--[if IE]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if lte IE 7]>
@@ -105,6 +106,9 @@
 			<div class="inner">
 				<div class="col-2">
 					<div class="imagen">
+						<a href="http://hicloset.com.mx/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/w/pwt007a_4_2.jpg" class="magnifier-thumb-wrapper">
+							<img id="thumb" src="http://hicloset.com.mx/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/w/pwt007a_4_2.jpg" />
+						</a>
 					</div>
 					<div class="thumbs">
 						<ul>
@@ -116,7 +120,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-2">
+				<div class="col-2" id="preview">
 					<div class="info">
 						<h2>Información del Artículo</h2>
 						<h3>Información del Artículo</h3>
@@ -236,9 +240,21 @@
 		</div>
 	</div>
 </footer>
-
+<script type="text/javascript" src="js/vendor/Event.js"></script>
+<script type="text/javascript" src="js/vendor/Magnifier.js"></script>
 <script type="text/javascript" src="js/modules/mediator.js"></script>
 <script type="text/javascript" src="js/modules/main.js"></script>
+<script type="text/javascript">
+	var evt = new Event();
+    var m = new Magnifier(evt);
+
+    m.attach({
+	    thumb: '#thumb',
+	    large: 'http://hicloset.com.mx/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/w/pwt007a_4_2.jpg',
+	    largeWrapper: 'preview',
+	    zoom: 3
+	});
+</script>
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':9999/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>

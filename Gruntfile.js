@@ -25,7 +25,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'src/js',
         src: '**/*.js',
-        dest: '../store/skin/frontend/hicloset/default/js'
+        dest: '../site/magento/skin/frontend/hicloset/default/js'
       }
     },
 
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
         },
         files: {
           "bin/css/main.css": "src/less/main.less",
-          "../store/skin/frontend/hicloset/default/css/styles.css": "src/less/main.less"
+          "../site/magento/skin/frontend/hicloset/default/css/styles.css": "src/less/main.less"
         }
       },
     },

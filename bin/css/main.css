@@ -556,14 +556,25 @@ header .inner nav ul li ul {
   margin-top: 1em;
 }
 .product-detail .inner .col-2 .imagen {
-  width: 97%;
-  height: 520px;
-  border: 1px solid #8C8C8C;
+  width: 98%;
+  /*height: 520px;*/
+  position: relative;
   overflow: hidden;
   margin: 0 1.4%;
 }
+.product-detail .inner .col-2 .imagen .relative {
+  position: relative !important;
+}
+.product-detail .inner .col-2 .imagen .zoomWrapper {
+  width: 100% !important;
+  height: auto !important;
+  position: relative !important;
+}
 .product-detail .inner .col-2 .imagen img {
-  width: 100%;
+  border: 1px solid #8C8C8C;
+  max-width: 99% !important;
+  max-height: 750px !important;
+  position: relative !important;
 }
 .product-detail .inner .col-2 .thumbs {
   margin: 1em 0;

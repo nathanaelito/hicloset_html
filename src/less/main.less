@@ -508,13 +508,24 @@ header{
 	.inner{
 		.col-2{
 			.imagen{
-				width: 97%;
-				height: 520px;
-				border: 1px solid #8C8C8C;
+				width: 98%;
+				/*height: 520px;*/
+				position: relative;
 				overflow: hidden;
 				margin: 0 1.4%;
+				.relative {
+					position: relative !important;
+				}
+				.zoomWrapper {
+					width: 100% !important;
+					height: auto !important;
+					.relative
+				}
 				img {
-					width: 100%;
+					border: 1px solid #8C8C8C;
+					max-width: 99% !important;
+					max-height: 750px !important;
+					.relative
 				}
 			}
 			.thumbs {

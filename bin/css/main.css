@@ -171,6 +171,13 @@ h6 {
 h2 {
   font-size: 24px;
 }
+ol,
+ul {
+  list-style: none;
+}
+.no-display {
+  display: none;
+}
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
@@ -631,6 +638,83 @@ header .inner nav ul li ul {
   color: #df174d;
   font-size: 160%;
   font-weight: 700;
+}
+.product-detail .inner .col-2 .info .product-options .required-label {
+  color: #ff0000;
+  font-size: .8em;
+}
+.product-detail .inner .col-2 .info .product-options .clearfix:after,
+.product-detail .inner .col-2 .info .product-options .swatch-attr:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.product-detail .inner .col-2 .info .product-options .swatch-attr {
+  float: none;
+  display: block;
+  clear: both;
+  border: 0;
+}
+.product-detail .inner .col-2 .info .product-options .swatch-attr .select-label {
+  font-weight: 700;
+}
+.product-detail .inner .col-2 .info .product-options .swatch-attr .required em {
+  font-size: .8em;
+  color: #ff0000;
+}
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list:after {
+  float: none;
+  display: block;
+  clear: both;
+  border: 0;
+}
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list {
+  margin-left: -3px;
+  zoom: 1;
+  clear: both;
+  -webkit-transform: translateZ(0px);
+}
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list li {
+  float: left;
+  zoom: 1;
+  margin: .5em .2em;
+}
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list li .swatch-link,
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list li .swatch-label {
+  display: block;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  color: #636363;
+  text-decoration: none;
+  box-sizing: content-box;
+}
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list li .swatch-label {
+  border: 1px solid #fff;
+  margin: 0;
+  white-space: nowrap;
+  background: #f4f4f4;
+}
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list li .swatch-link {
+  border: 1px solid #cccccc;
+  margin: 0 0 3px;
+}
+.product-detail .inner .col-2 .info .product-options ul.configurable-swatch-list li .swatch-link .x {
+  display: none;
+  text-indent: -999em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../images/bg_x.png) center no-repeat transparent;
+  z-index: 10;
+}
+.product-detail .inner .col-2 .info .product-options-bottom .qty-wrapper {
+  margin-top: .5em;
+}
+.product-detail .inner .col-2 .info .product-options-bottom .qty-wrapper .qty {
+  width: 30px;
 }
 .product-detail .inner .col-2 .info .save-buy {
   padding: 20px 0;

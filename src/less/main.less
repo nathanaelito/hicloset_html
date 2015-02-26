@@ -114,6 +114,12 @@ h1,h2,h3,h4,h5,h6{
 h2{
 	font-size: 24px;
 }
+ol,ul {
+	list-style: none;
+}
+.no-display {
+	display: none;
+}
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
@@ -583,6 +589,90 @@ header{
 									font-weight: 700;
 								}
 							}
+						}
+					}
+				}
+				.product-options {
+					.required-label {
+						color:#ff0000;
+						font-size: .8em;
+					}
+					.clearfix:after, 
+					.swatch-attr:after {
+						content: '';
+						display: table;
+						clear: both;
+					}
+					.swatch-attr {
+						float: none;
+						display: block;
+						clear: both;
+						border: 0;
+						.select-label {
+							font-weight: 700;
+						}
+						.required {
+							em {
+								font-size: .8em;
+								color: #ff0000;
+							}
+						}
+					}
+					ul {
+						&.configurable-swatch-list:after {
+							float: none;
+							display: block;
+							clear: both;
+							border: 0;
+						}
+						&.configurable-swatch-list {
+							margin-left: -3px;
+							zoom: 1;
+							clear: both;
+							-webkit-transform: translateZ(0px);
+							li {
+								float: left;
+								zoom: 1;
+								margin: .5em .2em;
+								.swatch-link, .swatch-label {
+									display: block;
+									border-radius: 3px;
+									font-size: 14px;
+									text-align: center;
+									color: #636363;
+									text-decoration: none;
+									box-sizing: content-box;
+								}
+								.swatch-label {
+									border: 1px solid #fff;
+									margin: 0;
+									white-space: nowrap;
+									background: #f4f4f4;
+								}
+								.swatch-link {
+									border: 1px solid #cccccc;
+									margin: 0 0 3px;
+									.x {
+										display: none;
+										text-indent: -999em;
+										position: absolute;
+										left: 0;
+										right: 0;
+										top: 0;
+										bottom: 0;
+										background: url(../images/bg_x.png) center no-repeat transparent;
+										z-index: 10;
+									}
+								}
+							}
+						}
+					}
+				}
+				.product-options-bottom {
+					.qty-wrapper {
+						margin-top: .5em;
+						.qty {
+							width: 30px;
 						}
 					}
 				}

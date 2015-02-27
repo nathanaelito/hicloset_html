@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url('icomoon.css');
 @import url('elements.less');
+
 @font-face {
 	font-family: 'NexaLight';
 	src: url('fonts/nexa-light-webfont.eot');
@@ -98,7 +99,6 @@ input, textarea{
 	position: relative;
 	float: left;
 	width: 50%;
-	min-height: 600px;
 	overflow: hidden;
 }
 .col-3{
@@ -150,14 +150,16 @@ header{
 				li{
 					display: block;
 					float: left;
+					transition: all .3s;
 					a{
 						border-right: 1px solid @blanco;
 						color: @blanco;
 						display: block;
 						line-height: 22px;
-						margin: 11px 0;
+						margin: 11px 0 10px 0;
 						padding: 0 15px;
 						text-decoration: none;
+						transition: all .3s;
 						span{
 							&[class^="icon-"]{
 								font-size: 24px;
@@ -165,7 +167,7 @@ header{
 							}
 						}
 						&.icon-shopping-cart{
-							background-color: @rosa;
+							/*background-color: @rosa;*/
 							border-right: 0px;
 							font-size: 24px;
 							line-height: 44px;
@@ -174,6 +176,9 @@ header{
 							text-align: center;
 							width: 44px;
 						}
+					}
+					&:hover {
+						background-color: @rosa;
 					}
 				}
 			}
@@ -403,7 +408,7 @@ header{
 		position: absolute;
 		text-align: center;
 		text-decoration: none;
-		top: 112px;
+		top: 35%;
 		width: 46px;
 	}
 	.icon-angle-double-left{ left: -13px;}
@@ -413,6 +418,8 @@ header{
 		margin-top: .7em;
 		margin-bottom: .7em;
 		width: 960px;
+		overflow: visible;
+
 		h2{
 			margin-left: 10px;
 			margin-right: 10px;
@@ -444,6 +451,14 @@ header{
 							    right:0;
 							    margin-left:auto;
 							    margin-right:auto;
+							    transition: all .5s;
+							    &:hover {
+							    	-webkit-transform: scale(1.3);
+									-moz-transform: scale(1.3);
+									-o-transform: scale(1.3);
+									-ms-transform: scale(1.3);
+									transform: scale(1.3);
+							    }
 							}
 							.icon-tag{
 								color: @rosa;
@@ -556,6 +571,14 @@ header{
 							margin: auto;
 							img {
 								width: 100%;
+								transition: all .5s;
+							    &:hover {
+							    	-webkit-transform: scale(1.3);
+									-moz-transform: scale(1.3);
+									-o-transform: scale(1.3);
+									-ms-transform: scale(1.3);
+									transform: scale(1.3);
+								}
 							}
 						}
 					}
@@ -678,6 +701,17 @@ header{
 				}
 				.save-buy{
 					padding: 20px 0;
+				}
+				.social {
+					ul {
+						li {
+							margin: 0 1em .5em 0;
+							float: left;
+							img {
+								width: 25px;
+							}
+						}
+					}
 				}
 			}
 
@@ -1157,3 +1191,5 @@ ul.save-buy{
 		}
 	}
 }
+
+@import url('animations.less');

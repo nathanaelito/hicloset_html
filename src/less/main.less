@@ -420,10 +420,13 @@ header{
 		width: 960px;
 		overflow: visible;
 
-		h2{
+		h2, p {
 			margin-left: 10px;
 			margin-right: 10px;
 			margin-top: 1em;
+		}
+		p {
+			margin-top: 0;
 		}
 		.slider{
 		    width: 100%;
@@ -508,6 +511,13 @@ header{
 							font-weight: 700;
 							line-height: 100%;
 							text-align: center;
+							a {
+								color: @rosa;
+								text-decoration: none;
+								&:hover {
+									text-decoration: underline;
+								}
+							}
 						}
 						&.desc{
 							margin: .9em 1em;
@@ -1122,8 +1132,7 @@ ul.save-buy{
 			.col-2 { 
 				width: 100%;
 				.imagen {
-					width: 97%;
-					height: auto;
+					display: none;
 				}
 				.thumbs {
 					height: auto;
@@ -1174,14 +1183,6 @@ ul.save-buy{
 		        .product-list{
 		            width:400%;
 		        }
-			/*.slider{
-				.product-list{
-					li{
-						padding: 0;
-						width: 100%;
-					}
-				}
-			}*/
 		    }
 		}
 	}

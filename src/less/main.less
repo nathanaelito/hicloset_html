@@ -106,6 +106,16 @@ input, textarea{
 	float: left;
 	width: 33.33%;
 }
+.animate-thumb {
+	transition: all .5s;
+    &:hover {
+    	-webkit-transform: scale(1.3);
+		-moz-transform: scale(1.3);
+		-o-transform: scale(1.3);
+		-ms-transform: scale(1.3);
+		transform: scale(1.3)
+	}
+}
 h1,h2,h3,h4,h5,h6{
 	font-family: 'NexaBold';
 	font-weight: normal;
@@ -454,14 +464,7 @@ header{
 							    right:0;
 							    margin-left:auto;
 							    margin-right:auto;
-							    transition: all .5s;
-							    &:hover {
-							    	-webkit-transform: scale(1.3);
-									-moz-transform: scale(1.3);
-									-o-transform: scale(1.3);
-									-ms-transform: scale(1.3);
-									transform: scale(1.3);
-							    }
+							    .animate-thumb();
 							}
 							.icon-tag{
 								color: @rosa;
@@ -581,14 +584,7 @@ header{
 							margin: auto;
 							img {
 								width: 100%;
-								transition: all .5s;
-							    &:hover {
-							    	-webkit-transform: scale(1.3);
-									-moz-transform: scale(1.3);
-									-o-transform: scale(1.3);
-									-ms-transform: scale(1.3);
-									transform: scale(1.3);
-								}
+								.animate-thumb();
 							}
 						}
 					}
@@ -625,6 +621,23 @@ header{
 						}
 					}
 				}
+				p {
+					&.product-description {
+						margin-bottom: .5em;
+					}
+					&.availability {
+						margin-bottom: 1em;
+						strong {
+							font-weight: 700;
+						}
+					}
+				}
+				.price-box {
+					margin: .5em 0;
+					color: @rosa;
+					font-size: 160%;
+					font-weight: 700;
+				}
 				.product-options {
 					.required-label {
 						color:#ff0000;
@@ -649,6 +662,12 @@ header{
 								font-size: .8em;
 								color: #ff0000;
 							}
+						}
+					}
+					.data-table {
+						margin-bottom: .5em;
+						strong {
+							font-weight: 700;
 						}
 					}
 					ul {
@@ -756,6 +775,7 @@ header{
 				    right:0;
 				    margin-left:auto;
 				    margin-right:auto;
+				    .animate-thumb();
 				}
 				.icon-tag{
 					color: @rosa;
@@ -1064,6 +1084,9 @@ ul.save-buy{
 }
 
 @media screen and (max-width: 767px){
+	#wrap {
+		min-height:0;
+	}
 	#main {
 	  	overflow: auto;
 	  	padding-bottom: 0;

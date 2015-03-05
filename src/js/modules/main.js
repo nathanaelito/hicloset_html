@@ -117,38 +117,36 @@
 
 	app.controller("ProductSlider", function() {
 
-		var sliders=document.getElementsByClassName("slider");
+		var sliders=document.getElementsByClassName("product-slider");
 		for (var i = 0; i < sliders.length; i++) {
 			new Slider(sliders[i]);
 		};
 
 		function Slider(slider) 
 		{
+			var self=this;
 			this.wrap=slider.getElementsByTagName("ul")[0];
 			this.list=slider.getElementsByTagName("li");
+			this.list_width=0;
+			this.arrows=slider.getElementsByClassName("arrows")[0];
 
-			this.init=function() {
-				var self=this;
+			this.init=function() 
+			{	
 				this.resize();
 				this.setListWidth();
+
 				window.onresize=function() {self.resize()};
 			}
 
 			this.resize=function() 
 			{
-				var w_width=window.outerWidth;
-				var list_width=0;
+				var bound=this.imageBound();
+				this.list_width=this.getListWidth(bound);
 
-				if(w_width>1024)
-					list_width=this.getListWidth(4);
-				else if((w_width>767)&&(w_width<1024))
-					list_width=this.getListWidth(3);
-				else if((w_width>640)&&(w_width<767))
-					list_width=this.getListWidth(2);
-				else if(w_width<640)
-					list_width=this.getListWidth(1);
+				this.wrap.style.width=(this.list_width+'%');
+				this.wrap.style.marginLeft=0;
 
-				this.wrap.style.width=(list_width+'%');
+				this.initArrows();
 			}
 
 			this.setListWidth=function(list) {
@@ -160,7 +158,56 @@
 			this.getListWidth=function(value) {
 				return (((this.list.length-value)*100/value)+100);
 			}
+
+
+			this.initArrows=function() 
+			{
+				this.position=(this.imageBound()-1);
+				this.percent=0;
+				this.alnks=this.arrows.getElementsByTagName('a');
+				this.alnks[0].style.display='none';
+
+				this.checkArrowVisibility();
+
+				this.arrows.onclick=function(event) 
+				{
+					self.position=((event.target.id=="right-arrow")?self.position+1:self.position-1);
+					self.percent=((event.target.id=="right-arrow")?self.percent+1:self.percent-1);
+					_tm.to(self.wrap, 0.5, {marginLeft:-((self.list_width/self.list.length)*self.percent)+'%'})
+
+					self.checkArrowVisibility(true);
+				}
+			}
+
+			this.checkArrowVisibility=function(check) 
+			{
+				if(check) 
+				{
+					this.alnks[0].style.display=((this.position==(this.imageBound()-1))?"none":"block");
+					this.alnks[1].style.display=((this.position==(this.list.length-1))?"none":"block");
+				} 
+				else 
+				{
+					if(this.list.length>this.imageBound()) {
+						this.alnks[1].style.display='block';
+					} else {
+						this.alnks[1].style.display='none';
+					}
+				}		
+			}
 			
+			this.imageBound=function() 
+			{
+				var w_width=window.outerWidth, bound=0;
+
+				if(w_width>1024) bound=4;
+				else if((w_width>767)&&(w_width<1024)) bound=3;
+				else if((w_width>640)&&(w_width<767)) bound=2;
+				else if(w_width<640) bound=1;
+
+				return bound;
+			}
+
 			this.init();
 		}
 	});

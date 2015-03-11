@@ -596,6 +596,29 @@ header .inner nav ul li ul {
 .product-detail {
   margin-top: 1em;
 }
+.product-detail .inner #message .inner-box {
+  width: 100%;
+  /*margin: .5em 0;*/
+  opacity: 0;
+  transition: all .5s;
+  border-radius: .5em;
+}
+.product-detail .inner #message .inner-box.show {
+  opacity: 1;
+  margin-bottom: 1em;
+}
+.product-detail .inner #message .inner-box p {
+  padding: 0.5em;
+}
+.product-detail .inner #message #warning {
+  background: #F6BD6F;
+}
+.product-detail .inner #message #success {
+  background: #BBF66F;
+}
+.product-detail .inner #message #error {
+  background: #F66F82;
+}
 .product-detail .inner .col-2 .imagen {
   width: 98%;
   /*height: 520px;*/

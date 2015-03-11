@@ -540,6 +540,31 @@ header{
 .product-detail{
 	margin-top: 1em;
 	.inner{
+		#message {
+			.inner-box {
+				width: 100%;
+				/*margin: .5em 0;*/
+				opacity: 0;
+				transition: all .5s;
+				border-radius: .5em;
+				&.show {
+					opacity: 1;
+					margin-bottom: 1em;
+				}
+				p {
+					padding: .5em	
+				}
+			}
+			#warning {
+				background: #F6BD6F;
+			}
+			#success {
+				background:#BBF66F;
+			}
+			#error {
+				background:#F66F82;
+			}
+		}
 		.col-2{
 			.imagen{
 				width: 98%;

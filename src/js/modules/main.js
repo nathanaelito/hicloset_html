@@ -15,7 +15,7 @@
   		}
   	});
 
-  	app.controller("HomeSlider", ['$scope', '$interval', function($scope, $interval) {
+  	/*app.controller("HomeSlider", ['$scope', '$interval', function($scope, $interval) {
 
 		var self=this;
 
@@ -210,7 +210,7 @@
 
 			this.init();
 		}
-	});
+	});*/
 
 	app.controller("Search", ['$location', function() {
 		this.expression={};

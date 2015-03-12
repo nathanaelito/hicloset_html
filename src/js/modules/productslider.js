@@ -2,8 +2,11 @@ window.sliders=[];
 
 ProductSlider = Class.create();
 ProductSlider.prototype = {
-	initialize: function(elem) {
+	initialize: function(elem) 
+	{
+		var _this=this;
 		this.sliders=$$('.'+elem);
+		this.slider=[];
 		this.sliders.each(function(slider) 
 		{
 			var self=this;
@@ -11,17 +14,15 @@ ProductSlider.prototype = {
 			this.list=slider.select("li");
 			this.list_width=0;
 			this.arrows=slider.select(".arrows")[0];
+			this.alnks=null;
 
 			this.init=function() 
 			{
 				this.resize();
 				this.setListWidth();
 
-				window.sliders.push(this);
 				window.onresize=function() {
-					window.sliders.each(function(slider) {
-						slider.resize();
-					})
+					self.resize();
 				};
 			}
 
@@ -51,21 +52,27 @@ ProductSlider.prototype = {
 			{
 				this.position=(this.imageBound()-1);
 				this.percent=0;
-				this.alnks=this.arrows.getElementsByTagName('a');
-				this.alnks[0].style.display='none';
 
-				this.checkArrowVisibility();
+				if(this.alnks==null) {
+					this.alnks=this.arrows.getElementsByTagName('a');
+					this.alnks[0].style.display='none';
 
-				this.arrows.observe('click', function(event) 
-				{
-					event.preventDefault();
+					this.checkArrowVisibility();
 
-					self.position=((event.target.id=="right-arrow")?self.position+1:self.position-1);
-					self.percent=((event.target.id=="right-arrow")?self.percent+1:self.percent-1);
-					TweenMax.to(self.wrap, 0.5, {marginLeft:-((self.list_width/self.list.length)*self.percent)+'%'})
+					this.arrows.observe('click',function(event) 
+					{
+						console.log(self.list_width);
+						event.preventDefault();
 
-					self.checkArrowVisibility(true);
-				});
+						self.position=((event.target.id=="right-arrow")?self.position+1:self.position-1);
+						self.percent=((event.target.id=="right-arrow")?self.percent+1:self.percent-1);
+						TweenMax.to(self.wrap, 0.5, {marginLeft:-((self.list_width/self.list.length)*self.percent)+'%'})
+
+						self.checkArrowVisibility(true);
+					});
+				} else {
+					this.checkArrowVisibility();
+				}
 			}
 
 			this.checkArrowVisibility=function(check) 

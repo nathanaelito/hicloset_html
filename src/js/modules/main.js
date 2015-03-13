@@ -1,7 +1,7 @@
 /*
  * Angular modules
  */
-(function(_m, _tm, _ih, _u) 
+(function(_tm, _ih) 
 {
   	var app = angular.module('hicloset', []);
 
@@ -14,6 +14,16 @@
   			mobilemenu=((mobilemenu)?false:true);
   		}
   	});
+
+  	app.controller("Panels", function() {
+		this.panel=1;
+		this.setPanel=function(value) {
+			this.panel=value;
+		}
+		this.isSelected=function(value) {
+			return (this.panel===value);
+		}
+	});
 
   	/*app.controller("HomeSlider", ['$scope', '$interval', function($scope, $interval) {
 
@@ -210,7 +220,7 @@
 
 			this.init();
 		}
-	});*/
+	});
 
 	app.controller("Search", ['$location', function() {
 		this.expression={};
@@ -230,19 +240,11 @@
 				console.log(data);
 			});
 		};
-	}]);
+	}]);*/
 
-	app.controller("Panels", function() {
-		this.panel=1;
-		this.setPanel=function(value) {
-			this.panel=value;
-		}
-		this.isSelected=function(value) {
-			return (this.panel===value);
-		}
-	});
+	
 
-	app.controller("Product", function() {
+	/*app.controller("Product", function() {
 		this.data={};
 		this.send=function(url) {
 			$http.post(url, this.data).
@@ -253,6 +255,6 @@
 				console.log(data);
 			});
 		};
-	});
+	});*/
 
-}(mediator, TweenMax, imhelper, _u));
+}(TweenMax, imhelper));

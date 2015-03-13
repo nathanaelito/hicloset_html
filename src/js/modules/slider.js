@@ -69,6 +69,10 @@ Slider.prototype = {
                 _this.activeln.addClassName("active");
 
                 _this.getSlide(id);
+
+                clearInterval(_this.intv);
+
+                _this.autoplay();
             }
         });
 
@@ -78,14 +82,16 @@ Slider.prototype = {
     autoplay:function() 
     {
         var _this=this;
-        intv=setInterval(function() 
+        this.intv=setInterval(function() 
         {
-            _this.position=(_this.straight)?_this.position+1:_this.position-1;
+            _this.position=(_this.straight && (_this.position<2))?_this.position+1:_this.position-1;
 
             if((_this.position+1)===_this.items.length)
                 _this.straight=false;
             else if(_this.position===0)
                 _this.straight=true;
+
+            //console.log("autoplay position: "+_this.position)
 
             _this.activeln.removeClassName('active');
             _this.activeln=$('ln_'+_this.position);
@@ -98,6 +104,7 @@ Slider.prototype = {
 
     getSlide:function(value) {
         this.position=parseInt(value);
+        //console.log("get slide position: " + this.position);
         TweenMax.to(this.wrapper, 0.5, {left:-(this.width*this.position)+'%', ease: Sine.easeOut});
     }
 }

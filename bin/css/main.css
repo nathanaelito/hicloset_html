@@ -999,6 +999,9 @@ footer .inner .col-3 ul li input.ng-invalid.ng-dirty {
   background: #ffb5b0;
   color: #000000;
 }
+footer .inner .col-3 ul li .validation-advice {
+  position: absolute;
+}
 footer .inner .col-3 ul li button {
   background-color: #df174d;
   border: 0px;

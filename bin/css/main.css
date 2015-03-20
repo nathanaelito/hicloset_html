@@ -635,6 +635,14 @@ header .inner nav ul li ul {
   height: 20px;
   margin: .5em 0;
 }
+.product-detail .inner .col-main {
+  width: 70%;
+  float: right;
+}
+.product-detail .inner .col-left {
+  width: 30%;
+  float: left;
+}
 .product-detail .inner #message .inner-box {
   width: 100%;
   /*margin: .5em 0;*/
